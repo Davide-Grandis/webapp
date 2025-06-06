@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to your Raspberry Pi</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter as the default font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple animation for the header */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen">
+
+    <div class="max-w-4xl mx-auto p-6 md:p-8 space-y-8">
+
+        <!-- Header Section -->
+        <header class="text-center fade-in">
+            <div class="inline-block bg-red-500 p-3 rounded-full mb-4">
+                 <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Raspberry Pi Web Server</h1>
+            <p class="text-lg text-gray-400 mt-2">Your server is up and running on Debian.</p>
+        </header>
+
+        <!-- System Info Section -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Server Status</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-white">Hostname</h3>
+                    <!-- You can make this dynamic with a backend script -->
+                    <p class="text-green-400">raspberrypi</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-white">Operating System</h3>
+                    <p class="text-green-400">Debian</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-white">IP Address</h3>
+                    <p class="text-green-400">192.168.1.10</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-white">Web Server</h3>
+                    <p class="text-green-400">Apache/Nginx</p>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">
+                <!-- Note on how to make this dynamic -->
+                Note: The values above are static. You can use PHP, Python (Flask/Django), or Node.js to dynamically display actual system information.
+            </p>
+        </div>
+
+        <!-- Useful Links Section -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-white mb-4">Useful Links</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Raspberry Pi Documentation -->
+                <a href="https://www.raspberrypi.com/documentation/" target="_blank" class="bg-gray-700 hover:bg-red-500/80 transition-all duration-300 p-4 rounded-lg flex items-center space-x-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-9-5.747h18"></path></svg>
+                    <span class="font-medium text-white">Pi Docs</span>
+                </a>
+                <!-- Debian Wiki -->
+                <a href="https://wiki.debian.org/" target="_blank" class="bg-gray-700 hover:bg-blue-500/80 transition-all duration-300 p-4 rounded-lg flex items-center space-x-3">
+                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6s8-4 8 4-8 4-8 4-8-4-8-4 8-4 8-4zM4 12v6s8 4 8 4 8-4 8-4v-6"></path></svg>
+                    <span class="font-medium text-white">Debian Wiki</span>
+                </a>
+                <!-- Local Network Admin Tool (example) -->
+                <a href="http://192.168.1.1/admin" target="_blank" class="bg-gray-700 hover:bg-green-500/80 transition-all duration-300 p-4 rounded-lg flex items-center space-x-3">
+                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="font-medium text-white">Router Admin</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            <p>Powered by Raspberry Pi &bull; Hosted on your local network</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
